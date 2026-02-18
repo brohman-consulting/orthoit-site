@@ -1,0 +1,1081 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ortho IT provides specialized IT services for orthodontic practices—secure, compliant, and built for the demands of modern dental offices." />
+  <title>Ortho IT — Specialized IT Services for Orthodontic Practices</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #0e1b24;
+      --text: #1d2b36;
+      --muted: #5a6a78;
+      --line: rgba(14, 27, 36, .10);
+      --bg: #fbfaf8;
+      --panel: #ffffff;
+      --panel-2: #f4f1ed;
+      --primary: #1a5fa0;
+      --primary-dark: #0f3d68;
+      --accent: #3ca84b;
+      --accent-light: #4fc35f;
+      --accent-glow: rgba(60, 168, 75, .15);
+      --radius: 16px;
+      --container: 1140px;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Inter", -apple-system, system-ui, sans-serif;
+      --ease: cubic-bezier(.22, .8, .22, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 250, 248, .85);
+      backdrop-filter: blur(20px) saturate(1.2);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand img { width: 200px; height: auto; }
+    .brand-tagline {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: .03em;
+    }
+    .brand-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: .01em;
+    }
+    .brand-text span {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .02em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 4px;
+    }
+    nav a {
+      display: block;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      border-radius: 8px;
+      transition: all .2s var(--ease);
+    }
+    nav a:hover { color: var(--ink); background: rgba(26,95,160,.05); }
+
+    .header-cta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: all .25s var(--ease);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(60,168,75,.25);
+    }
+    .btn-primary:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 30px rgba(60,168,75,.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--line);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-white {
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .btn-white:hover { background: rgba(255,255,255,.2); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      padding: 100px 0 80px;
+      background: var(--primary-dark);
+      color: #fff;
+      overflow: hidden;
+    }
+    /* Gradient orbs */
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      top: -300px;
+      right: -200px;
+      background: radial-gradient(circle, rgba(60,168,75,.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      bottom: -200px;
+      left: -100px;
+      background: radial-gradient(circle, rgba(26,95,160,.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* Grid pattern overlay */
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    /* Diagonal accent line */
+    .hero-accent {
+      position: absolute;
+      top: 0;
+      right: 15%;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(60,168,75,.3), transparent);
+      transform: rotate(-15deg);
+      transform-origin: top;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 20px rgba(60,168,75,.5);
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5vw, 60px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent-light);
+    }
+    .hero-lead {
+      font-size: 17px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.7);
+      max-width: 520px;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Hero card */
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 28px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-card::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+    .hero-card h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .hero-card li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,.8);
+      line-height: 1.4;
+    }
+    .hero-card li svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: var(--accent-light);
+      margin-top: 1px;
+    }
+
+    /* ── TRUSTED BY BAR ── */
+    .trust-bar {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      padding: 20px 0;
+    }
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .trust-items {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .trust-item svg { width: 20px; height: 20px; opacity: .5; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 0; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.2vw, 40px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all .3s var(--ease);
+    }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      opacity: 0;
+      transition: opacity .3s var(--ease);
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(14,27,36,.08);
+      border-color: rgba(60,168,75,.2);
+    }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(26,95,160,.08), rgba(26,95,160,.03));
+      border: 1px solid rgba(26,95,160,.1);
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+    }
+    .service-icon svg { width: 24px; height: 24px; color: var(--primary); }
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── WHY US ── */
+    .why-section {
+      background: var(--panel-2);
+      position: relative;
+      overflow: hidden;
+    }
+    .why-section::before {
+      content: "";
+      position: absolute;
+      top: -200px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+      pointer-events: none;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+    .why-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      transition: all .3s var(--ease);
+    }
+    .why-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(14,27,36,.06);
+    }
+    .why-number {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .why-number span {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .05em;
+    }
+    .why-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 12px 0 8px;
+    }
+    .why-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .about-text {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+    .about-text h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .about-text p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .values-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .value-item {
+      display: flex;
+      gap: 14px;
+      padding: 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: all .25s var(--ease);
+    }
+    .value-item:hover {
+      border-color: rgba(60,168,75,.2);
+      box-shadow: 0 8px 30px rgba(14,27,36,.05);
+    }
+    .value-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-glow), rgba(60,168,75,.05));
+      border: 1px solid rgba(60,168,75,.15);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .value-icon svg { width: 20px; height: 20px; color: var(--accent); }
+    .value-item strong {
+      display: block;
+      font-size: 15px;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .value-item span {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: linear-gradient(180deg, var(--bg), rgba(26,95,160,.03));
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .contact-info {
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-info::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(60,168,75,.2), transparent 70%);
+      pointer-events: none;
+    }
+    .contact-info h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .contact-info p {
+      color: rgba(255,255,255,.7);
+      font-size: 15px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .contact-detail {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+      position: relative;
+    }
+    .contact-detail li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .contact-detail svg {
+      width: 20px;
+      height: 20px;
+      color: var(--accent-light);
+      flex-shrink: 0;
+    }
+    .contact-detail a {
+      color: #fff;
+      font-weight: 600;
+    }
+    .contact-detail span {
+      color: rgba(255,255,255,.7);
+      font-size: 14px;
+    }
+
+    .contact-form {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+    .contact-form h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    form { display: grid; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid rgba(14,27,36,.12);
+      border-radius: 10px;
+      background: #fff;
+      font: inherit;
+      font-size: 14px;
+      color: var(--text);
+      transition: all .2s var(--ease);
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(60,168,75,.1);
+    }
+    textarea { min-height: 100px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: #aaa; }
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,.7);
+      padding: 40px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .footer-brand img { height: 36px; width: auto; border-radius: 8px; }
+    .footer-brand strong { color: #fff; font-size: 15px; }
+    .footer-brand span { font-size: 12px; display: block; color: rgba(255,255,255,.5); }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,.6);
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,.4);
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* ── ANIMATIONS ── */
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .js .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero-content { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { max-width: 480px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .container { width: calc(100% - 32px); }
+      section { padding: 60px 0; }
+      .hero { padding: 70px 0 60px; }
+      nav ul { display: none; }
+      .header-cta .btn-outline { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-items { gap: 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <img src="assets/logo.jpg" alt="Ortho IT" />
+        <span class="brand-tagline">IT for Orthodontics</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-outline" href="mailto:info@orthoit.com">Email Us</a>
+        <a class="btn btn-primary" href="#contact">Get Started →</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-accent"></div>
+      <div class="container hero-content">
+        <div class="reveal">
+          <div class="hero-eyebrow">IT Services for Orthodontic Practices</div>
+          <h1>Technology that keeps<br>your <em>practice</em> running.</h1>
+          <p class="hero-lead">
+            Ortho IT provides specialized IT services for orthodontic practices—dependable support, healthcare-grade security, and systems designed for the unique demands of modern dental offices.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services">Explore Services →</a>
+            <a class="btn btn-white" href="#why">Why Ortho IT</a>
+          </div>
+        </div>
+        <div class="hero-card reveal reveal-delay-2">
+          <h3>What you can expect</h3>
+          <ul>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Responsive support for day-to-day issues and urgent incidents
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Integration with practice management and imaging systems
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Backup and recovery built for healthcare data
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              HIPAA-aware security and compliance support
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar reveal">
+      <div class="container trust-inner">
+        <div class="trust-label">Trusted by</div>
+        <div class="trust-items">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+            Orthodontic Practices
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Multi-Location Clinics
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            Dental Specialists
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <div class="section-label reveal">Services</div>
+        <h2 class="section-title reveal">IT built for orthodontic practices,<br>delivered with clarity.</h2>
+        <p class="section-sub reveal">One accountable partner for strategy, support, security, and the systems your practice relies on.</p>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>
+              </svg>
+            </div>
+            <h3>Practice IT Infrastructure</h3>
+            <p>From workstations to servers to networks—we plan, implement, and support your full technology stack, optimized for dental practice workflows.</p>
+          </div>
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.5 19H9a7 7 0 110-14h9.5C21 5 23 7 23 9.5S21 14 18.5 14H9a3.5 3.5 0 010-7h9"/>
+              </svg>
+            </div>
+            <h3>Healthcare Backup &amp; Recovery</h3>
+            <p>Secure, compliant backup strategies designed for patient data—protecting images, records, and practice management databases with fast recovery paths.</p>
+          </div>
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+              </svg>
+            </div>
+            <h3>Multi-Location &amp; Remote Access</h3>
+            <p>Enable secure access across locations with modern controls, VPN solutions, and device management for staff who work between offices.</p>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3>HIPAA Security &amp; Compliance</h3>
+            <p>Practical security improvements—hardening, monitoring, and policies—aligned with healthcare regulations and patient privacy requirements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why" class="why-section">
+      <div class="container">
+        <div class="section-label reveal">Why Ortho IT</div>
+        <h2 class="section-title reveal">We understand orthodontics.</h2>
+        <p class="section-sub reveal">We focus on the unique needs of orthodontic practices—imaging systems, patient records, multi-chair workflows, and compliance.</p>
+
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-number">15+ <span>years</span></div>
+            <h3>Healthcare IT experience</h3>
+            <p>We plan upgrades and migrations carefully, minimizing patient care disruption when technology changes.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-number">Ortho <span>focus</span></div>
+            <h3>Built for your workflows</h3>
+            <p>We understand practice management software, digital imaging, and the systems orthodontic offices depend on daily.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-number">Fast <span>response</span></div>
+            <h3>When patients are waiting</h3>
+            <p>Responsive help for urgent issues—because downtime in a practice means patients in the waiting room.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-label reveal">About</div>
+        <h2 class="section-title reveal">Technology should support patient care—<br>not interrupt it.</h2>
+        <p class="section-sub reveal">We help you standardize, secure, and simplify—so your team stays focused on patients.</p>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <h3>Our approach</h3>
+            <p>Ortho IT believes in long-term partnerships with orthodontic practices. We take the time to understand how your office operates, then build a reliable IT foundation—supporting the day-to-day while keeping security, backup, and HIPAA compliance in view.</p>
+            <p>Expect direct answers, clean documentation, and recommendations that prioritize stability over shiny new tools.</p>
+          </div>
+
+          <ul class="values-list reveal reveal-delay-1">
+            <li class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h5l3-9 4 18 3-9h5"/></svg>
+              </div>
+              <div>
+                <strong>Uptime</strong>
+                <span>Your practice runs on technology. We keep it running reliably.</span>
+              </div>
+            </li>
+            <li class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div>
+                <strong>Responsiveness</strong>
+                <span>Fast support when you need it—because patients don't wait for IT.</span>
+              </div>
+            </li>
+            <li class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div>
+                <strong>Compliance</strong>
+                <span>HIPAA-aware practices built into everything we do.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-label reveal">Contact</div>
+        <h2 class="section-title reveal">Let's talk about your practice IT.</h2>
+        <p class="section-sub reveal">Ready to get started? Send a note and we'll follow up within one business day.</p>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <h3>Get in touch</h3>
+            <p>Whether you need a full IT partner or just want a second opinion on your current setup, we're happy to chat.</p>
+            <ul class="contact-detail">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:info@orthoit.com">info@orthoit.com</a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <a id="phone-link" href="#"></a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Serving South Western Ontario</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-form reveal reveal-delay-1">
+            <h3>Send a message</h3>
+            <form id="contact-form" action="https://formspree.io/f/mqedeqaa" method="POST">
+              <div class="form-row">
+                <div><label for="name">Full name</label><input id="name" name="name" placeholder="Your name" required /></div>
+                <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@practice.com" required /></div>
+              </div>
+              <div><label for="company">Practice Name</label><input id="company" name="company" placeholder="Your practice name" /></div>
+              <div><label for="msg">Message</label><textarea id="msg" name="message" placeholder="Tell us a bit about your practice and what you need."></textarea></div>
+              <input type="hidden" name="_subject" value="New inquiry from orthoit.com" />
+              <input type="text" name="_gotcha" style="display:none" />
+              <div class="form-footer">
+                <button type="submit" class="btn btn-primary">Send Message →</button>
+                <span class="form-note">We'll respond within one business day</span>
+              </div>
+            </form>
+            <div id="form-success" style="display:none;text-align:center;padding:40px 20px;">
+              <h3 style="color:var(--ink);margin-bottom:8px;">Message sent ✓</h3>
+              <p style="color:var(--muted);">Thanks! We'll get back to you within one business day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/logo.jpg" alt="Ortho IT" />
+          <div>
+            <strong>Ortho IT</strong>
+            <span>IT Services for Orthodontic Practices</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#why">Why Us</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 Ortho IT. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Formspree AJAX submission
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            btn.textContent = 'Send Message →';
+            btn.disabled = false;
+            alert('Something went wrong. Please try emailing us directly at info@orthoit.com');
+          }
+        } catch {
+          btn.textContent = 'Send Message →';
+          btn.disabled = false;
+          alert('Connection error. Please try emailing us directly at info@orthoit.com');
+        }
+      });
+    }
+
+    // Obfuscated phone number (anti-spam)
+    (function() {
+      var p = ['5','1','9','-','5','7','5','-','1','0','0','0'];
+      var n = p.join('');
+      var el = document.getElementById('phone-link');
+      if (el) {
+        el.href = 'tel:+1' + n.replace(/-/g, '');
+        el.textContent = n;
+      }
+    })();
+  </script>
+
+</body>
+</html>
