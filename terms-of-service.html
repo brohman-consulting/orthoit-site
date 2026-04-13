@@ -1,190 +1,423 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service | Ortho IT</title>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/android-chrome-192x192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Read the Ortho IT terms of service governing the use of the website and services." />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="manifest" href="site.webmanifest" />
+  <title>Terms of Service | Ortho IT</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --bg: #0b1220;
-      --card: #111a2e;
-      --text: #e8eefc;
-      --muted: #9fb0d0;
-      --line: rgba(255,255,255,.12);
-      --brand: #57a6ff;
-      --brand-2: #7ef0c7;
-      --container: 980px;
+      --ink: #0e1b24;
+      --text: #1d2b36;
+      --muted: #5a6a78;
+      --line: rgba(14, 27, 36, .10);
+      --bg: #fbfaf8;
+      --panel: #ffffff;
+      --panel-2: #f4f1ed;
+      --primary: #1a5fa0;
+      --primary-dark: #0f3d68;
+      --accent: #3ca84b;
+      --accent-light: #4fc35f;
+      --accent-glow: rgba(60, 168, 75, .15);
+      --radius: 16px;
+      --container: 1140px;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Inter", -apple-system, system-ui, sans-serif;
+      --ease: cubic-bezier(.22, .8, .22, 1);
     }
-    * { box-sizing: border-box; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #0a1020 0%, #0d1630 100%);
+      font-family: var(--sans);
       color: var(--text);
-      line-height: 1.65;
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--brand-2); }
-    a:hover { color: #fff; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
     .container {
-      width: min(var(--container), calc(100% - 2rem));
+      width: min(var(--container), calc(100% - 48px));
       margin: 0 auto;
     }
+
     header {
-      border-bottom: 1px solid var(--line);
-      background: rgba(7, 12, 24, 0.75);
-      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
+      z-index: 100;
+      background: rgba(251, 250, 248, .85);
+      backdrop-filter: blur(20px) saturate(1.2);
+      border-bottom: 1px solid var(--line);
     }
-    .header-inner {
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 0;
+      height: 64px;
+      gap: 16px;
     }
     .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand img { width: 200px; height: auto; }
+    .brand-tagline {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: .03em;
+    }
+    .header-cta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: .75rem;
+      gap: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: all .25s var(--ease);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent);
       color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: .02em;
+      box-shadow: 0 4px 20px rgba(60,168,75,.25);
     }
-    .brand img { height: 40px; width: auto; border-radius: 8px; }
-    .back-link {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: .95rem;
+    .btn-primary:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 30px rgba(60,168,75,.3);
     }
-    .back-link:hover { color: #fff; }
-    main { padding: 4rem 0; }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--line);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero {
+      position: relative;
+      padding: 88px 0 56px;
+      background: var(--primary-dark);
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      top: -300px;
+      right: -200px;
+      background: radial-gradient(circle, rgba(60,168,75,.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      bottom: -200px;
+      left: -100px;
+      background: radial-gradient(circle, rgba(26,95,160,.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hero-accent {
+      position: absolute;
+      top: 0;
+      right: 15%;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(60,168,75,.3), transparent);
+      transform: rotate(-15deg);
+      transform-origin: top;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 20px rgba(60,168,75,.5);
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5vw, 60px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      margin-bottom: 18px;
+    }
+    .hero-lead {
+      font-size: 17px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.72);
+      max-width: 640px;
+    }
+
+    .legal-section {
+      padding: 72px 0 88px;
+      background: linear-gradient(to bottom, var(--bg), var(--panel-2));
+    }
+    .legal-shell {
+      max-width: 920px;
+      margin: 0 auto;
+    }
     .legal-card {
-      background: rgba(17, 26, 46, 0.92);
+      background: rgba(255,255,255,.92);
       border: 1px solid var(--line);
       border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.28);
-      padding: clamp(1.5rem, 3vw, 3rem);
+      box-shadow: 0 20px 60px rgba(15, 61, 104, .08);
+      padding: 40px;
     }
-    h1, h2 { line-height: 1.2; }
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin: 0 0 1rem;
+    .meta {
+      display: inline-flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+      border-radius: 14px;
+      background: var(--panel-2);
+      color: var(--muted);
+      font-size: 14px;
+      border: 1px solid rgba(14, 27, 36, .06);
     }
     h2 {
-      margin-top: 2.25rem;
-      font-size: 1.25rem;
+      font-family: var(--serif);
+      font-size: 30px;
+      color: var(--ink);
+      margin: 34px 0 12px;
+      line-height: 1.15;
     }
-    p { margin: 0 0 1rem; }
-    strong { color: #fff; }
+    p {
+      margin: 0 0 16px;
+      font-size: 16px;
+      color: var(--text);
+    }
+    strong { color: var(--ink); }
     hr {
       border: 0;
-      border-top: 1px solid var(--line);
-      margin: 2rem 0;
+      border-top: 1px solid rgba(14, 27, 36, .10);
+      margin: 34px 0;
     }
+    .contact-block {
+      margin-top: 10px;
+      padding: 20px 22px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(26,95,160,.06), rgba(60,168,75,.08));
+      border: 1px solid rgba(26,95,160,.08);
+    }
+    .contact-block a,
+    .legal-card a.inline-link {
+      color: var(--primary-dark);
+      text-decoration: underline;
+      text-decoration-color: rgba(26,95,160,.25);
+      text-underline-offset: 3px;
+    }
+
     footer {
-      border-top: 1px solid var(--line);
-      padding: 2rem 0 3rem;
-      color: var(--muted);
+      background: var(--primary-dark);
+      color: rgba(255,255,255,.7);
+      padding: 40px 0;
     }
     .footer-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 20px;
     }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .footer-brand img { height: 36px; width: auto; border-radius: 8px; }
+    .footer-brand strong { color: #fff; font-size: 15px; }
+    .footer-brand span { font-size: 12px; display: block; color: rgba(255,255,255,.5); }
     .footer-links {
       display: flex;
-      gap: .9rem;
+      gap: 24px;
       flex-wrap: wrap;
     }
     .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,.6);
+      transition: color .2s;
     }
     .footer-links a:hover { color: #fff; }
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,.4);
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
     @media (max-width: 700px) {
-      .header-inner, .footer-inner { align-items: flex-start; flex-direction: column; }
-      main { padding: 2rem 0; }
+      .container { width: calc(100% - 32px); }
+      .brand img { width: 170px; }
+      .brand-tagline { display: none; }
+      .header-cta .btn-outline { display: none; }
+      .hero { padding: 72px 0 48px; }
+      .legal-section { padding: 48px 0 64px; }
+      .legal-card { padding: 24px; border-radius: 20px; }
+      .meta { flex-direction: column; gap: 8px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container header-inner">
+    <div class="container nav">
       <a class="brand" href="/">
         <img src="assets/logo.png" alt="Ortho IT" />
-        <span>Ortho IT</span>
+        <span class="brand-tagline">IT for Dental Practices</span>
       </a>
-      <a class="back-link" href="/">← Back to orthoit.com</a>
+      <div class="header-cta">
+        <a class="btn btn-outline" href="mailto:web@orthoit.com">Email Us</a>
+        <a class="btn btn-primary" href="/#contact">Get Started →</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <article class="legal-card">
+    <section class="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-accent"></div>
+      <div class="container hero-content">
+        <div class="hero-eyebrow">Legal</div>
         <h1>Terms of Service</h1>
-        <p><strong>Effective Date:</strong> April 13, 2026<br />
-        <strong>Last Updated:</strong> April 13, 2026</p>
+        <p class="hero-lead">The terms that govern how Ortho IT’s website and services are used, including the support-only SMS communication terms for our help desk.</p>
+      </div>
+    </section>
 
-        <p>These Terms of Service ("Terms") govern your use of the website (www.orthoit.com) and services provided by 2568039 Ontario Inc., operating as OrthoIT ("OrthoIT," "we," "us," or "our"). By accessing our website or using our services, you agree to these Terms.</p>
+    <section class="legal-section">
+      <div class="container legal-shell">
+        <article class="legal-card">
+          <div class="meta">
+            <span><strong>Effective Date:</strong> April 13, 2026</span>
+            <span><strong>Last Updated:</strong> April 13, 2026</span>
+          </div>
 
-        <h2>Services</h2>
-        <p>OrthoIT provides managed IT services, including help desk support, network management, remote monitoring, and related technology services for small and medium-sized businesses.</p>
+          <p>These Terms of Service ("Terms") govern your use of the website (www.orthoit.com) and services provided by 2568039 Ontario Inc., operating as OrthoIT ("OrthoIT," "we," "us," or "our"). By accessing our website or using our services, you agree to these Terms.</p>
 
-        <h2>Use of Our Website</h2>
-        <p>You agree to use our website for lawful purposes only. You may not use the site in any way that could damage, disable, or impair the site or interfere with any other party's use of the site.</p>
+          <h2>Services</h2>
+          <p>OrthoIT provides managed IT services, including help desk support, network management, remote monitoring, and related technology services for small and medium-sized businesses.</p>
 
-        <h2>Intellectual Property</h2>
-        <p>All content on our website, including text, graphics, logos, and images, is the property of OrthoIT or its content suppliers and is protected by applicable intellectual property laws.</p>
+          <h2>Use of Our Website</h2>
+          <p>You agree to use our website for lawful purposes only. You may not use the site in any way that could damage, disable, or impair the site or interfere with any other party's use of the site.</p>
 
-        <h2>Limitation of Liability</h2>
-        <p>To the fullest extent permitted by law, OrthoIT shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our website or services.</p>
+          <h2>Intellectual Property</h2>
+          <p>All content on our website, including text, graphics, logos, and images, is the property of OrthoIT or its content suppliers and is protected by applicable intellectual property laws.</p>
 
-        <h2>Governing Law</h2>
-        <p>These Terms are governed by the laws of the Province of Ontario and the federal laws of Canada applicable therein.</p>
+          <h2>Limitation of Liability</h2>
+          <p>To the fullest extent permitted by law, OrthoIT shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our website or services.</p>
 
-        <hr />
+          <h2>Governing Law</h2>
+          <p>These Terms are governed by the laws of the Province of Ontario and the federal laws of Canada applicable therein.</p>
 
-        <h2>SMS Communication Terms</h2>
-        <p><strong>Program Name:</strong> OrthoIT Help Desk SMS Support</p>
-        <p><strong>Program Description:</strong> OrthoIT provides IT support responses via SMS text message. When you text our help desk number, our support team will reply to assist with your IT question or issue. SMS is used exclusively for help desk support communication — we do not send marketing messages, promotions, or automated campaigns.</p>
-        <p><strong>Message Frequency:</strong> Message frequency varies. You will receive SMS replies only in response to messages you send to our help desk. We do not initiate text conversations.</p>
-        <p><strong>Message and Data Rates:</strong> Message and data rates may apply. Please contact your wireless carrier for details about your messaging plan.</p>
-        <p><strong>Opt-Out:</strong> You may opt out of SMS communication at any time by replying <strong>STOP</strong> to any message from us. After opting out, you will receive a confirmation message and will no longer receive SMS replies from our help desk. You may resume SMS communication at any time by texting us again.</p>
-        <p><strong>Help:</strong> For assistance, reply <strong>HELP</strong> to any message from us, or contact us at <a href="mailto:support@orthoit.com">support@orthoit.com</a> or <a href="tel:+15194977787">519-497-7787</a>.</p>
-        <p><strong>Customer Care Contact:</strong><br />
-        Email: <a href="mailto:support@orthoit.com">support@orthoit.com</a><br />
-        Phone: <a href="tel:+15194977787">519-497-7787</a></p>
-        <p><strong>Privacy Policy:</strong> Your privacy is important to us. Please review our <a href="/privacy-policy">Privacy Policy</a> for details on how your information is collected, used, and protected. Your personal information, including your phone number, will not be sold, rented, or shared with third parties for marketing purposes.</p>
+          <hr />
 
-        <hr />
+          <h2>SMS Communication Terms</h2>
+          <p><strong>Program Name:</strong> OrthoIT Help Desk SMS Support</p>
+          <p><strong>Program Description:</strong> OrthoIT provides IT support responses via SMS text message. When you text our help desk number, our support team will reply to assist with your IT question or issue. SMS is used exclusively for help desk support communication — we do not send marketing messages, promotions, or automated campaigns.</p>
+          <p><strong>Message Frequency:</strong> Message frequency varies. You will receive SMS replies only in response to messages you send to our help desk. We do not initiate text conversations.</p>
+          <p><strong>Message and Data Rates:</strong> Message and data rates may apply. Please contact your wireless carrier for details about your messaging plan.</p>
+          <p><strong>Opt-Out:</strong> You may opt out of SMS communication at any time by replying <strong>STOP</strong> to any message from us. After opting out, you will receive a confirmation message and will no longer receive SMS replies from our help desk. You may resume SMS communication at any time by texting us again.</p>
+          <p><strong>Help:</strong> For assistance, reply <strong>HELP</strong> to any message from us, or contact us at <a class="inline-link" href="mailto:support@orthoit.com">support@orthoit.com</a> or <a class="inline-link" href="tel:+15194977787">519-497-7787</a>.</p>
+          <div class="contact-block">
+            <p><strong>Customer Care Contact:</strong><br />
+            Email: <a href="mailto:support@orthoit.com">support@orthoit.com</a><br />
+            Phone: <a href="tel:+15194977787">519-497-7787</a></p>
+          </div>
+          <p><strong>Privacy Policy:</strong> Your privacy is important to us. Please review our <a class="inline-link" href="/privacy-policy">Privacy Policy</a> for details on how your information is collected, used, and protected. Your personal information, including your phone number, will not be sold, rented, or shared with third parties for marketing purposes.</p>
 
-        <h2>Changes to These Terms</h2>
-        <p>We may update these Terms from time to time. Changes will be posted on this page with an updated effective date. Continued use of our website or services after changes are posted constitutes acceptance of the revised Terms.</p>
+          <hr />
 
-        <h2>Contact Us</h2>
-        <p><strong>OrthoIT</strong><br />
-        Email: <a href="mailto:support@orthoit.com">support@orthoit.com</a><br />
-        Phone: <a href="tel:+15194977787">519-497-7787</a></p>
-      </article>
-    </div>
+          <h2>Changes to These Terms</h2>
+          <p>We may update these Terms from time to time. Changes will be posted on this page with an updated effective date. Continued use of our website or services after changes are posted constitutes acceptance of the revised Terms.</p>
+
+          <h2>Contact Us</h2>
+          <div class="contact-block">
+            <p><strong>OrthoIT</strong><br />
+            Email: <a href="mailto:support@orthoit.com">support@orthoit.com</a><br />
+            Phone: <a href="tel:+15194977787">519-497-7787</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <div>© 2026 Ortho IT. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-service">Terms of Service</a>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Ortho IT" />
+          <div>
+            <strong>Ortho IT</strong>
+            <span>IT Services for Dental &amp; Specialty Practices</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="/#services">Services</a>
+          <a href="/#why">Why Us</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+        </div>
       </div>
+      <div class="footer-copy">© 2026 Ortho IT. All rights reserved.</div>
     </div>
   </footer>
 </body>
